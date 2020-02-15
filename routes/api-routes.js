@@ -46,4 +46,19 @@ module.exports = function(app) {
       });
     }
   });
+  app.get("/api/users/:id", function(req, res) {
+    db.User.findAll({
+      where: {
+        id: req.params.id
+      },
+      include: [db.Search]
+    }).then(function(dbSearch) {
+      res.json(dbSearch);
+    });
+  });
+  app.post("/api/searches", function(req, res) {
+    db.Search.create(req.body).then(function(dbSearch) {
+      res.json(dbSearch);
+    });
+  });
 };
