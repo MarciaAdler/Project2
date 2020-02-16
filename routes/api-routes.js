@@ -48,7 +48,7 @@ module.exports = function(app) {
   });
 
 // search virus by specific location
-  app.get("/api/:location", function(req, res) {
+  app.get("/api/searches/:location", function(req, res) {
 
     db.virusModel.findOne({
       where: {
