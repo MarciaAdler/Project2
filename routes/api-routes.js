@@ -63,12 +63,12 @@ module.exports = function(app) {
 // search virus by specific location
   app.get("/api/:location", function(req, res) {
 
-    db.Location.findOne({
+    db.virusModel.findOne({
       where: {
         id: req.params.location
       }
-    }).then(function(dbLocation) {
-      res.json(dbLocation);
+    }).then(function(dbvirusModel) {
+      res.json(dbvirusModel);
     });
   });
 
