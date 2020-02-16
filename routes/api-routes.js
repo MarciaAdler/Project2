@@ -59,6 +59,14 @@ module.exports = function(app) {
     });
   });
 
+  // all location
+  app.get("/api/location", function(req, res) {
+
+    db.virusModel.findAll({}).then(function(dbvirusModel) {
+      res.json(dbvirusModel);
+    });
+  });
+
   app.get("/api/users/:id", function(req, res) {
     db.User.findAll({
       where: {
