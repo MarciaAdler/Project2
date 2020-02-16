@@ -53,7 +53,8 @@ module.exports = function(app) {
     db.virusModel.findAll({
       where: {
         id: req.params.location
-      }
+      },
+      include: [db.virusModel]
     }).then(function(dbvirusModel) {
       res.json(dbvirusModel);
     });
