@@ -47,19 +47,6 @@ module.exports = function(app) {
     }
   });
 
-  // to search news by user input 
-
-  app.get("/api/:id", function(req, res) {
-    // Add a join to include all of the  Posts here
-    db.News.findOne({
-      where: {
-        id: req.params.id
-      }
-    }).then(function(dbNews) {
-      res.json(dbNews);
-    });
-  });
-
 // search virus by specific location
   app.get("/api/:location", function(req, res) {
 
