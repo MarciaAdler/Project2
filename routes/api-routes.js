@@ -50,19 +50,11 @@ module.exports = function(app) {
 // search virus by specific location
   app.get("/api/searches/:location", function(req, res) {
 
-    db.virusModel.findOne({
+    db.virusModel.findAll({
       where: {
         id: req.params.location
       }
     }).then(function(dbvirusModel) {
-      res.json(dbvirusModel);
-    });
-  });
-
-  // all location
-  app.get("/api/location", function(req, res) {
-
-    db.virusModel.findAll({}).then(function(dbvirusModel) {
       res.json(dbvirusModel);
     });
   });
