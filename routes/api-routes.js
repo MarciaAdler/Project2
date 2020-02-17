@@ -46,4 +46,33 @@ module.exports = function(app) {
       });
     }
   });
+
+// search virus by specific location
+  app.get("/api/searches/:location", function(req, res) {
+
+    db.virusModel.findAll({
+      where: {
+        id: req.params.location
+      },
+      include: [db.virusModel]
+    }).then(function(dbvirusModel) {
+      res.json(dbvirusModel);
+    });
+  });
+
+  app.get("/api/users/:id", function(req, res) {
+    db.User.findAll({
+      where: {
+        id: req.params.id
+      },
+      include: [db.Search]
+    }).then(function(dbSearch) {
+      res.json(dbSearch);
+    });
+  });
+  app.post("/api/searches", function(req, res) {
+    db.Search.create(req.body).then(function(dbSearch) {
+      res.json(dbSearch);
+    });
+  });
 };
