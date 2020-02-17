@@ -11,3 +11,11 @@ form.login {
   background-color: #f6f5f5;
   width: 400px;
 }
+
+.search-bar {
+  display:inline; 
+  width: 300px;
+  background-image: url("../img/search.png");
+  background-repeat: no-repeat;
+  padding-left: 35px;
+}
