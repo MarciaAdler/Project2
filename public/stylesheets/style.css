@@ -2,3 +2,20 @@ form.signup,
 form.login {
   margin-top: 50px;
 }
+
+.navbar-collapse {
+  position: absolute;
+  top: 56px;
+  z-index: 100;
+  right: 0;
+  background-color: #f6f5f5;
+  width: 400px;
+}
+
+.search-bar {
+  display:inline; 
+  width: 300px;
+  background-image: url("../img/search.png");
+  background-repeat: no-repeat;
+  padding-left: 35px;
+}
