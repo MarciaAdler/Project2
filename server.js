@@ -2,6 +2,7 @@ require('dotenv').config();
 // Requiring necessary npm packages
 var express = require("express");
 var session = require("express-session");
+var exphbs = require("express-handlebars");
 
 
 
@@ -16,6 +17,9 @@ var db = require("./models");
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
+app.engine("handlebars", exphbs({ defaultLayout: "main" }));
+app.set("view engine", "handlebars");
+
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(express.static("public"));
