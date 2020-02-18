@@ -1,4 +1,4 @@
 -- Drops the blogger if it exists currently --
-DROP DATABASE IF EXISTS viral;
+DROP DATABASE IF EXISTS coronavirus_db;
 -- Creates the "blogger" database --
-CREATE DATABASE viral;
+CREATE DATABASE coronavirus_db;
