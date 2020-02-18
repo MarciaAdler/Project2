@@ -10,7 +10,7 @@ let today = new Date();
         let url = 'http://newsapi.org/v2/everything?language=en&' +
           'q=Coronavirus&' +
           'from=' + currentDate + 
-          'sortBy=popularity&' +
+          'sortBy=publishedAt&' +
           'apiKey=b499be5fe2be429f9cd678c5202aba0d';
 
         $.ajax({
