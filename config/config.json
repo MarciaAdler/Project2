@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "Databasepassword",
+    "password": "dbpw1234",
     "database": "coronavirus_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
@@ -14,10 +14,10 @@
     "dialect": "mysql"
   },
   "production": {
-    "username": "xbuuk9gp3y04z8qc",
-    "password": "t36vabtn99wbzb03",
-    "database": "dj3lu0ivan1m31rr",
-    "host": "yhrz9vns005e0734.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+    "username": "process.env.DB_USER",
+    "password": "process.env.DB_PASS",
+    "database": "process.env.DB_DATABASE",
+    "host": "process.env.DB_HOST",
     "dialect": "mysql"
   }
 }
