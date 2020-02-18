@@ -69,6 +69,6 @@ db.Case.findAll({
     console.log(coords);
 });
 
-// module.exports = newArray;
+module.exports = findCases;
 
 

@@ -2,15 +2,82 @@
 // var exphbs = require("express-handlebars");
 // Requiring path to so we can use relative routes to our HTML files
 var path = require("path");
+const db = require("../models/");
 
 // Requiring our custom middleware for checking if a user is logged in
 var isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
   app.get("/", function(req, res) {
+    db.Case.findAll({}).then(function(cb) {
+      let provinces = 0;
+      for (let i = 0; i < cb.length; i++) {
+          if (cb[i].dataValues.caseDay === 1) {
+              provinces++;
+          }
+      }
+  
+      let caseDays = cb.length / provinces;
+      let caseArr = [];
+      let objCounter = 0;
+      for (let i = 0; i < caseDays; i++) {
+          let cases = 0;
+          for (let j = 0; j < provinces; j++) {
+              cases +=  cb[objCounter].dataValues.cases;
+              objCounter++;
+          }
+          caseArr.push(cases)
+      }
+      let newArray = caseArr.map(function(aCase) {
+          return { y: aCase};
+      });
+      return newArray;
+  });
+
+    res.render("index", newArray);
     // If the user already has an account send them to the members page
 
-    res.sendFile(path.join(__dirname, "../public/login.html"));
+    // res.sendFile(path.join(__dirname, "../public/login.html"));
+  });
+
+  app.get("/:location", function(req, res) {
+    db.Case.findAll({
+      where: {
+        country: req.params.location
+      }
+    }).then(function(cb) {
+      let provinces = 0;
+      for (let i = 0; i < cb.length; i++) {
+          if (cb[i].dataValues.caseDay === 1) {
+              provinces++;
+          }
+      }
+  
+      let caseDays = cb.length / provinces;
+      let caseArr = [];
+      let objCounter = 0;
+      for (let i = 0; i < caseDays; i++) {
+          let cases = 0;
+          for (let j = 0; j < provinces; j++) {
+              cases +=  cb[objCounter].dataValues.cases;
+              objCounter++;
+          }
+          caseArr.push(cases)
+      }
+      let newArray = caseArr.map(function(aCase) {
+          return { y: aCase};
+      });
+      // return caseArr;
+      res.send(caseArr);
+      // console.log(cb);
+      // console.log(caseArr);
+  });
+    // query.findCases("Mainland China");
+    // res.send(query("Mainland China"));
+    // res.render("index");
+    // If the user already has an account send them to the members page
+
+    // res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
   // Here we've add our isAuthenticated middleware to this route.

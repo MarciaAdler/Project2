@@ -6,6 +6,9 @@
                         <h3>Coronavirus over period of time</h3>
                         <div class="alert alert-secondary">
                             Line Graph of CoronaVirus over past week?
+                            {{#each newArray}}
+                                {{this.y}}
+                            {{/each}}
                         </div>
                         {{!-- <div class="graph-filters">
                             <button class="btn btn-primary btn-sm active">
