@@ -1,26 +1,28 @@
 // Dependencies
 var Sequelize = require("sequelize");
-
-let connection;
+let sequelize;
 if (process.env.JAWSDB_URL) {
-  connection = Sequelize.createConnection(process.env.JAWSDB_URL);
+  sequelize = new Sequelize(
+    "dj3lu0ivan1m31rr",
+    "xbuuk9gp3y04z8qc",
+    "t36vabtn99wbzb03",
+    {
+      host: "yhrz9vns005e0734.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+      dialect: "mysql"
+    }
+  );
 } else {
-  connection = Sequelize.createConnection({
+  // Creates mySQL connection using Sequelize, the empty string in the third argument spot is our password.
+  sequelize = new Sequelize("coronavirus_db", "root", "Databasepassword", {
     host: "localhost",
     port: 3306,
-    user: "root",
-    password: "Databasepassword",
-    database: "coronavirus_db"
+    dialect: "mysql",
+    pool: {
+      max: 5,
+      min: 0,
+      idle: 10000
+    }
   });
 }
 
-connection.connect(function(err) {
-  if (err) {
-    console.error("error connecting: " + err.stack);
-    return;
-  }
-
-  console.log("connected as id " + connection.threadId);
-});
-
-module.exports = connection;
+module.exports = sequelize;
