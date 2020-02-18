@@ -13,7 +13,7 @@ if (process.env.JAWSDB_URL) {
   );
 } else {
   // Creates mySQL connection using Sequelize, the empty string in the third argument spot is our password.
-  sequelize = new Sequelize("coronavirus_db", "root", "Databasepassword", {
+  sequelize = new Sequelize("coronavirus_db", "root", "dbpw1234", {
     host: "localhost",
     port: 3306,
     dialect: "mysql",
