@@ -1,7 +1,7 @@
 // load dependencies
 const puppeteer = require("puppeteer");
 const fs = require("fs");
-const cases = require("../models/coronaVirusModel");
+const db = require("../models");
 
 // site to scrape
 const caseSite =
@@ -66,7 +66,7 @@ let scraper = async function(site) {
 
     console.log(day);
     for (let j = 1; j <= numberOfProvinces; j++) {
-      cases.create({
+      db.Case.create({
         province: results[j][1],
         country: results[j][2],
         lat: results[j][3],
