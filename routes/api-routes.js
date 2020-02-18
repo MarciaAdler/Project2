@@ -1,6 +1,8 @@
+require('dotenv').config();
 // Requiring our models and passport as we've configured it
 var db = require("../models");
 var passport = require("../config/passport");
+const axios = require('axios');
 
 module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
@@ -75,4 +77,39 @@ module.exports = function(app) {
       res.json(dbSearch);
     });
   });
+
+  app.get("/api/news", function(req, res){
+    let today = new Date();
+    let dd = String(today.getDate()).padStart(2, '0');
+    let mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    let yyyy = today.getFullYear();
+    let currentDate = yyyy + "-" + mm + "-" + dd;
+    let queryURL = 'http://newsapi.org/v2/everything?language=en&' +
+    'q=Coronavirus&' +
+    'from=' + currentDate + 
+    'sortBy=publishedAt&' +
+    'apiKey=' + process.env.NEWS_API;
+
+    // console.log(queryURL);
+    // res.send(queryURL);
+    axios.get(queryURL).then(function(news){
+      res.json(news.data);
+    });
+
+  });
 };
+
+
+
+// axios.get(queryURL
+//   ).then(function(response){
+//     let articlesArray = response.articles;
+//     articlesArray.forEach(article => {
+
+//         let newsItem = $('<div class="news-item py-3 border-bottom">');
+        
+//         newsItem.append(`<p class="news-item-title mb-0"><a href="${article.url}" target="_blank">${article.title}</a></p>`);
+//         newsItem.append(`<p class="news-item-source mb-0">Source: ${article.source.name}</p>`);
+//         $('.news-feed').append(newsItem);
+//     });
+//   });
