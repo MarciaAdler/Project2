@@ -1,7 +1,7 @@
 {
   "development": {
     "username": "root",
-    "password": "sunny123",
+    "password": "dbpw1234",
     "database": "coronavirus_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
