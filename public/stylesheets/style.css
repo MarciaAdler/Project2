@@ -12,6 +12,30 @@ form.login {
   width: 100%;
 }
 
+.line-graph {
+  box-shadow: 0em 0.5em 0.2em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);
+}
+
+.card {
+  box-shadow: 0em 0.5em 0.2em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);
+}
+
+.news-item {
+  box-shadow: 0em 0.5em 0.2em -0.125em rgba(10,10,10,.1), 0 0 0 1px rgba(10,10,10,.02);
+  background-color:whitesmoke;
+}
+
+.news-item-title {
+  margin: 0px 15px 0px 15px;
+  font-family: 'Roboto', sans-serif;
+}
+
+.news-item-source {
+  margin: 0px 15px 0px 15px;
+  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
+}
+
 h5{
   margin-top:10px;
 }
