@@ -72,13 +72,12 @@ module.exports = function(app) {
       let newArray = caseArr.map(function(aCase) {
           return { y: aCase};
       });
-      // return caseArr;
-      res.send(caseArr);
-      // console.log(cb);
-      // console.log(caseArr);
+      let casesObj = {
+        yAxis: newArray
+      }
+      res.render("index", casesObj);
   });
-    // query.findCases("Mainland China");
-    // res.send(query("Mainland China"));
+
     // res.render("index");
     // If the user already has an account send them to the members page
 
