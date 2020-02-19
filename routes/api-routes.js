@@ -3,6 +3,12 @@ require("dotenv").config();
 var db = require("../models");
 var passport = require("../config/passport");
 const axios = require("axios");
+var Twitter = require('twitter');
+var client = new Twitter({
+  consumer_key: 'KtNnLCN6QzHsMDJE7O6ycjVts',
+  consumer_secret: 'VPz51xRgxknMO4vsuuq6PggSR2f9FbObXeAMrW46x6XAoZnEmN',
+  bearer_token: 'AAAAAAAAAAAAAAAAAAAAABxfCgEAAAAAgxEYPBvPgVqOCb2T4Dz2r0t4QFU%3Dmp42L7d3GGF7zScntcAiKt69jvOL06r08nsLBwJYDTzT8YThqV'
+});
 
 module.exports = function(app) {
 
@@ -172,6 +178,32 @@ module.exports = function(app) {
     });
   });
 
+
+app.get("/api/twitter", function(req, res){
+  client.get('search/tweets', {q: 'coronavirus cases lang:en'}, function(error, tweets, response) {
+    // let twitterObj = {};
+  
+    // for (var i = 0; i < 4; i ++){
+    //   // //profile image 
+    //   var profImage = tweets.statuses[i].user.profile_image_url;
+    //   // // date created at 
+    //   var timeCreated = tweets.statuses[i].created_at;
+    //   // username
+    //   var username = (tweets.statuses[i].user.screen_name);
+    //   //tweet
+    //   var tweet = (tweets.statuses[i].text);
+
+    //   twitterObj[image] = profImage;
+    //   twitterObj[time] = timeCreated;
+    //   twitterObj[user] = username;
+    //   twitterObj[userTweet] = tweet;
+
+    // }
+    res.json(tweets);
+  });
+  
+});
+
   app.get("/api/news", function(req, res) {
     let today = new Date();
     let dd = String(today.getDate()).padStart(2, "0");
@@ -194,6 +226,7 @@ module.exports = function(app) {
     });
   });
 };
+
 
 // axios.get(queryURL
 //   ).then(function(response){
