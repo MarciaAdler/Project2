@@ -45,6 +45,7 @@ let scrape = async function(site) {
       // push the finished row of 5 td elements into the larger array
       parsedArray.push(rowArray);
     }
+    console.log("Gotya", parsedArray);
     return parsedArray;
   });
 
