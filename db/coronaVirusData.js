@@ -5,7 +5,7 @@ const db = require("../models/");
 
 // site to scrape
 const caseSite =
-  "https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
+  "http://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
 
 // const deathsSite = "https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv"
 
@@ -56,7 +56,7 @@ let scraper = async function() {
   db.Case.destroy({
     where: {},
     truncate: true
-  })
+  });
 
   var results = await scrape(caseSite);
   console.log(results);
