@@ -1,5 +1,7 @@
 $(document).ready(() => {
 
+
+    
     $.ajax({
         url: "/api/d3",
         method: "GET"
