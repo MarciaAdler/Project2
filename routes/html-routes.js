@@ -13,10 +13,13 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
-  app.get("/members/:location", function(req, res) {
-
-
-      res.render("index");
+  app.get("/members/:location", function(req, res) { 
+    var location = [
+      {
+        country: req.params.location
+      }
+    ]
+      res.render("index", location[0]);
   });
 
 

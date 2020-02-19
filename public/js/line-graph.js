@@ -1,29 +1,40 @@
 $(document).ready(() => {
 
+    // console.log("Country Name:" + $('#country-name').text());
 
+    let countryName = $('#country-name').text();
+    let queryUrl = "/api/d3/";
+
+    if (countryName) {
+        queryUrl = "/api/d3/" + countryName;
+    }
     
     $.ajax({
-        url: "/api/d3",
+        url: queryUrl,
         method: "GET"
     }).then(response => {
-        console.log("D3: ");
-        console.log(response);
+        console.log("Query Url: " + queryUrl);
+        // console.log("D3: ");
+        // console.log(response);
         // 2. Use the margin convention practice 
+        // $('.alert-secondary').width();
         var margin = {top: 50, right: 50, bottom: 50, left: 50}
         , width = (window.innerWidth - margin.left - margin.right) * 0.7 // Use the window's width 
         , height = (window.innerHeight - margin.top - margin.bottom) * 0.7; // Use the window's height
 
         // The number of datapoints
-        var n = 30;
+        var n = response.length;
 
         // 5. X scale will use the index of our data
         var xScale = d3.scaleLinear()
             .domain([0, n-1]) // input
             .range([0, width]); // output
 
+        // console.log("Response:");
+        // console.log(response[response.length - 1].y);
         // 6. Y scale will use the randomly generate number 
         var yScale = d3.scaleLinear()
-            .domain([0, 100000]) // input 
+            .domain([0, response[response.length - 1].y]) // input 
             .range([height, 0]); // output 
 
         // 7. d3's line generator
@@ -46,8 +57,9 @@ $(document).ready(() => {
 
         // 1. Add the SVG to the page and employ #2
         var svg = d3.select(".alert-secondary").append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
+            // .attr("width", width + margin.left + margin.right)
+            // .attr("height", height + margin.top + margin.bottom)
+            .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
         .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
@@ -84,4 +96,4 @@ $(document).ready(() => {
     })
 
 
-    });
+});

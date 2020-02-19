@@ -1,13 +1,24 @@
 $(document).ready(() => {
 
-var Twitter = require('twitter');
+  $.ajax({
+    url: "/api/twitter",
+    method: "GET"
+  }).then(response => {
+    // console.log(response);
+    let statuses = response.statuses;
+    let fiveTweets = statuses.slice(0,5);
+    console.log(fiveTweets);
+    // $('.twitter-feed').append("Hello");
 
-var client = new Twitter({
-  consumer_key: 'KtNnLCN6QzHsMDJE7O6ycjVts',
-  consumer_secret: 'VPz51xRgxknMO4vsuuq6PggSR2f9FbObXeAMrW46x6XAoZnEmN',
-  bearer_token: 'AAAAAAAAAAAAAAAAAAAAABxfCgEAAAAAgxEYPBvPgVqOCb2T4Dz2r0t4QFU%3Dmp42L7d3GGF7zScntcAiKt69jvOL06r08nsLBwJYDTzT8YThqV'
-});
+    fiveTweets.forEach(tweet => {
+        let twitter = $('<div class="card bg-light mb-3" style="max-width: 50rem;">');
+            twitter.append (`<div class="card-header"><img class= "circular--square" src="${tweet.user.profile_image_url}" class="rounded mx-auto d-block" alt="Twitter Profile Image"><h6 class="twitterUsername">@${tweet.user.screen_name}</h6></div>`);
+            twitter.append(`<div class="card-body"><p class="card-text">"${tweet.text}"</p></div>`);
+            // console.log(tweet);
+            // $('.twitter-feed').append("Hello");
+            $('.twitter-feed').append(twitter);
 
+<<<<<<< HEAD
 // finds the five of the coronavirus searches
  
 client.get('search/tweets', {q: 'coronavirus cases lang:en'}, function(error, tweets, response) {
@@ -27,4 +38,12 @@ client.get('search/tweets', {q: 'coronavirus cases lang:en'}, function(error, tw
       $('.twitter-feed').append(twitter);
   }
 });
+=======
+
+    });
+
+    
+
+  })
+>>>>>>> master
 });
