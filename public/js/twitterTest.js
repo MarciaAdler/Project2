@@ -11,24 +11,19 @@ var client = new Twitter({
 client.get('search/tweets', {q: 'coronavirus cases lang:en'}, function(error, tweets, response) {
   for (var i = 0; i < 4; i ++){
     // //profile image 
-    // console.log(tweets.statuses[i].user.profile_image_url);
+    var profImage = tweets.statuses[i].user.profile_image_url;
     // // date created at 
-    // console.log(tweets.statuses[i].created_at);
+    var timeCreated = tweets.statuses[i].created_at;
     // username
-    console.log(tweets.statuses[i].user.screen_name);
+    var username = (tweets.statuses[i].user.screen_name);
+    //tweet
+    var tweet = (tweets.statuses[i].text);
+
+    let twitter = $('<div class="card bg-light mb-3" style="max-width: 50rem;">');
+      twitter.append (`<div class="card-header"><img class= "circular--square" src= "${profImage}" class="rounded mx-auto d-block" alt="Twitter Profile Image"><h6>"${username}"</h6></div>`)
+      twitter.append(`<div class="card-body"><p class="card-text">"${tweet}"</p></div>`);
+      $('.twitter-feed').append(twitter);
 
   }
-  
-// console.log(tweets.statuses[0].text)
-// console.log(tweets.statuses[1].text)
-// console.log(tweets.statuses[2].text)
-// console.log(tweets.statuses[3].text)
-// console.log(tweets.statuses[4].text)
 });
 
-
-// var $tweetList = $("<ul>");
-//     $tweetList.addClass("list-group");
-
-// // Add tweet to the DOM
-// $("#tweet").append($tweetList);
