@@ -13,9 +13,11 @@ $(document).ready(() => {
         url: queryUrl,
         method: "GET"
     }).then(response => {
-        console.log("D3: ");
-        console.log(response);
+        console.log("Query Url: " + queryUrl);
+        // console.log("D3: ");
+        // console.log(response);
         // 2. Use the margin convention practice 
+        // $('.alert-secondary').width();
         var margin = {top: 50, right: 50, bottom: 50, left: 50}
         , width = (window.innerWidth - margin.left - margin.right) * 0.7 // Use the window's width 
         , height = (window.innerHeight - margin.top - margin.bottom) * 0.7; // Use the window's height
@@ -55,8 +57,9 @@ $(document).ready(() => {
 
         // 1. Add the SVG to the page and employ #2
         var svg = d3.select(".alert-secondary").append("svg")
-            .attr("width", width + margin.left + margin.right)
-            .attr("height", height + margin.top + margin.bottom)
+            // .attr("width", width + margin.left + margin.right)
+            // .attr("height", height + margin.top + margin.bottom)
+            .attr("viewBox", "0 0 " + (width + margin.left + margin.right) + " " + (height + margin.top + margin.bottom))
         .append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
