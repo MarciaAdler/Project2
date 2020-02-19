@@ -42,7 +42,7 @@ $(document).ready(() => {
                 var strCheck = country.includes(str);
                 if (strCheck === true){
                     $('.search-bar-dropdown').removeClass('d-none');
-                    $('.search-bar-dropdown').prepend(`<a href="/${country}" class="px-3 py-2">${country}</a>`);
+                    $('.search-bar-dropdown').prepend(`<a href="/${country}" class="px-3 py-2"  data-country="${country}">${country}</a>`);
                     return;
                 }
                 // if ((country[i] + country[i +1]) === (str[i] + str[i + 1])) {
