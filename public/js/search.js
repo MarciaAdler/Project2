@@ -42,7 +42,7 @@ $(document).ready(() => {
                 var strCheck = country.includes(str);
                 if (strCheck === true){
                     $('.search-bar-dropdown').removeClass('d-none');
-                    $('.search-bar-dropdown').prepend(`<a href="/members/${country}" class="px-3 py-2"  data-country="${country}">${country}</a>`);
+                    $('.search-bar-dropdown').prepend(`<a href="/members/${country}" class="px-3 py-2 country-link"  data-country="${country}">${country}</a>`);
                     return;
                 }
             }

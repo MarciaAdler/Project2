@@ -173,32 +173,18 @@ module.exports = function(app) {
     });
   });
   app.post("/api/searches", function(req, res) {
+    // console.log("req.body:")
+    // console.log(req.body);
     db.Search.create(req.body).then(function(dbSearch) {
-      res.json(dbSearch);
+      console.log(dbSearch);
+      // res.json(dbSearch);
     });
   });
 
 
 app.get("/api/twitter", function(req, res){
   client.get('search/tweets', {q: 'coronavirus cases lang:en'}, function(error, tweets, response) {
-    // let twitterObj = {};
-  
-    // for (var i = 0; i < 4; i ++){
-    //   // //profile image 
-    //   var profImage = tweets.statuses[i].user.profile_image_url;
-    //   // // date created at 
-    //   var timeCreated = tweets.statuses[i].created_at;
-    //   // username
-    //   var username = (tweets.statuses[i].user.screen_name);
-    //   //tweet
-    //   var tweet = (tweets.statuses[i].text);
-
-    //   twitterObj[image] = profImage;
-    //   twitterObj[time] = timeCreated;
-    //   twitterObj[user] = username;
-    //   twitterObj[userTweet] = tweet;
-
-    // }
+    
     res.json(tweets);
   });
   
