@@ -17,7 +17,7 @@ module.exports = function(sequelize, DataTypes) {
     caseDay: Sequelize.INTEGER,
     date: Sequelize.DATE
   });
-  Case.sync({ force: true });
+  //Case.sync({ force: true });
   return Case;
 };
 // var deaths = sequelize.define("deaths", {
