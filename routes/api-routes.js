@@ -5,6 +5,30 @@ var passport = require("../config/passport");
 const axios = require("axios");
 
 module.exports = function(app) {
+
+  // grab all countries
+  app.get("/api/countries", function(req, res){
+    db.Case.findAll({
+      where: {
+        caseDay: 1
+      }
+    }).then(function(rows){
+      // rows.reduce()
+      let countryArr = [];
+      rows.forEach(row => {
+        countryArr.push(row.country);
+      });
+      // res.send(rows);
+      countryArr.sort();
+      finalCountries = countryArr.filter((country, i, arr) => {
+        if (country !== arr[i - 1]) {
+          return country;
+        }
+      });
+      res.json(finalCountries);
+    });
+  });
+
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -54,6 +78,7 @@ module.exports = function(app) {
       });
     }
   });
+
 
   // search virus by specific location
   app.get("/api/searches/:location", function(req, res) {

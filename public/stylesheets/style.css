@@ -9,13 +9,53 @@ form.login {
   z-index: 100;
   right: 0;
   background-color: #f6f5f5;
-  width: 400px;
+  width: 100%;
 }
 
 .search-bar {
-  display:inline; 
-  width: 300px;
   background-image: url("../img/search.png");
   background-repeat: no-repeat;
   padding-left: 35px;
+}
+
+.search-bar-container {
+  display:inline; 
+  width: 60%;
+  position: relative;
+}
+
+.search-bar-dropdown {
+  position: absolute;
+  background-color: #f6f5f5;
+  width: 100%;
+  z-index: 102;
+}
+
+.search-bar-dropdown a{
+  display: block;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.search-bar-dropdown a:hover {
+  background-color: #e1e1e1;
+}
+
+@media screen and (min-width: 858px) and (max-width: 1063px) {
+  .search-bar-container {
+    width: 50%;
+  }
+}
+
+@media screen and (min-width: 500px) and (max-width: 857px) {
+  .search-bar-container {
+    width: 40%;
+  }
+}
+
+.navbar-nav {
+  display: inline-block!important;
+}
+
+.navbar-nav .nav-link {
+  display: inline-block!important;
 }
