@@ -85,3 +85,23 @@ form.login {
     fill: none;
     stroke: steelblue;
   }
+
+  /* twitter styles */
+
+  .twitter-container{
+    padding: 5rem;
+    margin: 10rem;
+  }
+  .twitterUsername{
+    padding: 20px;
+  }
+  .circular--square {
+    border-radius: 50%;
+    display: block;
+    margin: 0 auto;
+    position: relative;
+    width: 4em;
+    height: 4em; 
+    float:left;
+    padding: 4px;
+  }

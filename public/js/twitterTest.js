@@ -22,7 +22,7 @@ client.get('search/tweets', {q: 'coronavirus cases lang:en'}, function(error, tw
     var tweet = (tweets.statuses[i].text);
 
     let twitter = $('<div class="card bg-light mb-3" style="max-width: 50rem;">');
-      twitter.append (`<div class="card-header"><img class= "circular--square" src= "${profImage}" class="rounded mx-auto d-block" alt="Twitter Profile Image"><h6>"${username}"</h6></div>`)
+      twitter.append (`<div class="card-header"><img class= "circular--square" src= "${profImage}" class="rounded mx-auto d-block" alt="Twitter Profile Image"><h6 class= "twitterUsername">"${username}"</h6></div>`)
       twitter.append(`<div class="card-body"><p class="card-text">"${tweet}"</p></div>`);
       $('.twitter-feed').append(twitter);
 
