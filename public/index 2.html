@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=\, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>The Viral</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-1/css/all.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css" />
+    <link rel="stylesheet" type="text/css" href="./stylesheets/style.css" />
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
+</head>
+
+<body>
+    <div class="wrapper">
+        <nav class="navbar">
+            <a class="navbar-brand" href="#">
+                <img src="./img/logo.png" alt="The Viral" width="150" />
+            </a>
+
+            <input type="text" class="form-control search-bar" placeholder="Search" />
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation-links" aria-controls="navigation-links" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"><i class="fas fa-bars mt-1"></i></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navigation-links">
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link px-3" href="#">Link</a>
+                    <a class="nav-item nav-link px-3" href="#">Link</a>
+                    <a class="nav-item nav-link px-3" href="#">Link</a>
+                </div>
+            </div>
+        </nav>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <div class="alert alert-primary">MAP?</div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 col-lg-8">
+                    <div class="line-graph">
+                        <h3>Coronavirus over period of time</h3>
+                        <div class="alert alert-secondary">
+                            Line Graph of CoronaVirus over past week?
+                        </div>
+                        <div class="graph-filters">
+                            <button class="btn btn-primary btn-sm active">
+                                Filter 1 (Past 7 Days?)
+                            </button>
+                            <button class="btn btn-primary btn-sm">
+                                Filter 2 (Past Month?)
+                            </button>
+                            <button class="btn btn-primary btn-sm">
+                                Filter 3 (Past 3 Months?)
+                            </button>
+                            <button class="btn btn-primary btn-sm">
+                                Filter 4 (Past Year?)
+                            </button>
+                        </div>
+                    </div>
+                    <div class="twitter-container pt-5">
+                        <h3>Word of Mouth (Twitter)</h3>
+                        <div class="twitter-feed row">
+                            <div id= "tweet" class="col-6">
+                                Tweet goes here
+                            </div>
+                            <div class="col-6">
+                                Tweet goes here
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-4" class="news-feed-container">
+                    <h5>News Feed</h5>
+                    <div class="news-feed"></div>
+                    <!--<div class="news-item py-3 border-bottom">
+                        <p class="news-item-title mb-0"><a href="#">Lorem ipsum dolor sit amet consectetur</a></p>
+                        <p class="news-item-source mb-0">Source: (News Source here)</p>
+                    </div> -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/news.js"></script>
+</body>
+
+</html>

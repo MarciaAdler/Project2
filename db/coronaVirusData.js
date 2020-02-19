@@ -1,7 +1,7 @@
 // load dependencies
 const puppeteer = require("puppeteer");
 const fs = require("fs");
-const db = require("../models");
+const db = require("../models/");
 
 // site to scrape
 const caseSite =
