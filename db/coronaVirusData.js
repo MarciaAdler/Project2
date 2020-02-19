@@ -45,6 +45,7 @@ let scrape = async function(site) {
       // push the finished row of 5 td elements into the larger array
       parsedArray.push(rowArray);
     }
+    console.log("Gotya", parsedArray);
     return parsedArray;
   });
 
@@ -53,10 +54,10 @@ let scrape = async function(site) {
 };
 
 let scraper = async function() {
-  db.Case.destroy({
-    where: {},
-    truncate: true
-  })
+  // await db.Case.destroy({
+  //   where: {},
+  //   truncate: true
+  // });
 
   var results = await scrape(caseSite);
   console.log(results);
@@ -83,7 +84,7 @@ let scraper = async function() {
     }
   }
 
-  fs.writeFile("covid_data.json", JSON.stringify(results), function(err) {
+  fs.writeFileSync("covid_data.json", JSON.stringify(results), function(err) {
     if (err) throw err;
     console.log("Saved!");
   });
