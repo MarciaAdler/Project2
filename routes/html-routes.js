@@ -14,38 +14,8 @@ module.exports = function(app) {
   });
 
   app.get("/members/:location", function(req, res) {
-    // db.Case.findAll({
-    //   where: {
-    //     country: req.params.location
-    //   }
-    // }).then(function(cb) {
-    //   let provinces = 0;
-    //   for (let i = 0; i < cb.length; i++) {
-    //     if (cb[i].dataValues.caseDay === 1) {
-    //       provinces++;
-    //     }
-    //   }
 
-    //   let caseDays = cb.length / provinces;
-    //   let caseArr = [];
-    //   let objCounter = 0;
-    //   for (let i = 0; i < caseDays; i++) {
-    //     let cases = 0;
-    //     for (let j = 0; j < provinces; j++) {
-    //       cases += cb[objCounter].dataValues.cases;
-    //       objCounter++;
-    //     }
-    //     caseArr.push(cases);
-    //   }
-    //   let newArray = caseArr.map(function(aCase) {
-    //     return { y: aCase };
-    //   });
-    //   let casesObj = {
-    //     yAxis: newArray
-    //   };
-    //   res.render("index", casesObj);
-    // });
-    res.render("index");
+      res.render("index");
   });
 
   // Here we've add our isAuthenticated middleware to this route.
