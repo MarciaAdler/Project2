@@ -10,8 +10,7 @@ var client = new Twitter({
 
 // finds the five of the coronavirus searches
  
-client.get('search/tweets', {q: 'coronavirus cases lang:en'})
-.then(function(error, tweets, response) {
+client.get('search/tweets', {q: 'coronavirus cases lang:en'}, function(error, tweets, response) {
   for (var i = 0; i < 4; i ++){
     // //profile image 
     var profImage = tweets.statuses[i].user.profile_image_url;
