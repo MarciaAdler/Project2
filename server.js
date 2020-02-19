@@ -9,7 +9,11 @@ var scraper = require("./db/coronaVirusData");
 const caseSite =
   "https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
 
-scraper();
+let x = 1;
+if (x < 2) {
+  scraper();
+  x++;
+}
 
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
