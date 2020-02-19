@@ -1,9 +1,11 @@
 {
   "development": {
-    "username": "root",
-    "password": "Bootcamp!",
-    "database": "coronavirus_db",
-    "host": "127.0.0.1",
+
+    "username": "xbuuk9gp3y04z8qc",
+    "password": "t36vabtn99wbzb03",
+    "database": "dj3lu0ivan1m31rr",
+    "host": "yhrz9vns005e0734.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+
     "dialect": "mysql"
   },
   "test": {
