@@ -17,7 +17,11 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/login.html"));
   });
 
+<<<<<<< HEAD
+  app.get("/:location", function(req, res) {
+=======
   app.get("/members/:location", function(req, res) {
+>>>>>>> master
     db.Case.findAll({
       where: {
         country: req.params.location
@@ -25,15 +29,40 @@ module.exports = function(app) {
     }).then(function(cb) {
       let provinces = 0;
       for (let i = 0; i < cb.length; i++) {
+<<<<<<< HEAD
+          if (cb[i].dataValues.caseDay === 1) {
+              provinces++;
+          }
+      }
+  
+=======
         if (cb[i].dataValues.caseDay === 1) {
           provinces++;
         }
       }
 
+>>>>>>> master
       let caseDays = cb.length / provinces;
       let caseArr = [];
       let objCounter = 0;
       for (let i = 0; i < caseDays; i++) {
+<<<<<<< HEAD
+          let cases = 0;
+          for (let j = 0; j < provinces; j++) {
+              cases +=  cb[objCounter].dataValues.cases;
+              objCounter++;
+          }
+          caseArr.push(cases)
+      }
+      let newArray = caseArr.map(function(aCase) {
+          return { y: aCase};
+      });
+      let casesObj = {
+        yAxis: newArray
+      }
+      res.render("index", casesObj);
+  });
+=======
         let cases = 0;
         for (let j = 0; j < provinces; j++) {
           cases += cb[objCounter].dataValues.cases;
@@ -49,6 +78,7 @@ module.exports = function(app) {
       };
       res.render("index", casesObj);
     });
+>>>>>>> master
 
     // res.render("index");
     // If the user already has an account send them to the members page
