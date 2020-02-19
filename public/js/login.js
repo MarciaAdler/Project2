@@ -34,6 +34,8 @@ $(document).ready(function() {
       })
       .catch(function(err) {
         console.log(err);
+        $("#alert .msg").text("email or password is incorrect");
+        $("#alert").fadeIn(500);
       });
   }
 });
