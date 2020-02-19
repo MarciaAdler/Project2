@@ -53,7 +53,7 @@ let scrape = async function(site) {
 };
 
 let scraper = async function() {
-  db.Case.destroy({
+  await db.Case.destroy({
     where: {},
     truncate: true
   });
