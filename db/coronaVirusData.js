@@ -52,13 +52,13 @@ let scrape = async function(site) {
   return result;
 };
 
-let scraper = async function(site) {
+let scraper = async function() {
   db.Case.destroy({
     where: {},
     truncate: true
   })
 
-  var results = await scrape(site);
+  var results = await scrape(caseSite);
   console.log(results);
 
   var daysOfData = results[1].length - 5;
@@ -88,4 +88,7 @@ let scraper = async function(site) {
     console.log("Saved!");
   });
 };
-scraper(caseSite);
+
+// scraper(caseSite);
+
+module.exports = scraper;
