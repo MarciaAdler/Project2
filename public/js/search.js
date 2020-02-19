@@ -45,20 +45,6 @@ $(document).ready(() => {
                     $('.search-bar-dropdown').prepend(`<a href="/${country}" class="px-3 py-2"  data-country="${country}">${country}</a>`);
                     return;
                 }
-                // if ((country[i] + country[i +1]) === (str[i] + str[i + 1])) {
-                //     $('.search-bar-dropdown').removeClass('d-none');
-                //     $('.search-bar-dropdown').prepend(`<a href="/${country}" class="px-3 py-2">${country}</a>`);
-                //     return;
-                // }
-                // else if (country[0] === str[0]) {
-                //     $('.search-bar-dropdown').removeClass('d-none');
-                //     $('.search-bar-dropdown').prepend(`<a href="/${country}" class="px-3 py-2">${country}</a>`);
-                //     return;
-                // } else if (country[i] === str[i]) {
-                //     $('.search-bar-dropdown').removeClass('d-none');
-                //     $('.search-bar-dropdown').append(`<a href="/${country}" class="px-3 py-2">${country}</a>`);
-                //     return;
-                // }
             }
         });
     }
