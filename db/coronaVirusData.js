@@ -53,10 +53,10 @@ let scrape = async function(site) {
 };
 
 let scraper = async function() {
-  db.Case.destroy({
+  await db.Case.destroy({
     where: {},
     truncate: true
-  })
+  });
 
   var results = await scrape(caseSite);
   console.log(results);
@@ -83,7 +83,7 @@ let scraper = async function() {
     }
   }
 
-  fs.writeFile("covid_data.json", JSON.stringify(results), function(err) {
+  fs.writeFileSync("covid_data.json", JSON.stringify(results), function(err) {
     if (err) throw err;
     console.log("Saved!");
   });
