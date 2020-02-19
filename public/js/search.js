@@ -36,7 +36,7 @@ $(document).ready(() => {
 
     const searchResults = str => {
         $('.search-bar-dropdown').html("");
-        
+
         countriesToFilter.forEach(country => {
             for (var i = 0;i < str.length; i++) {
                 var strCheck = country.includes(str);

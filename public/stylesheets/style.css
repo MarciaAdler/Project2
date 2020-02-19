@@ -59,3 +59,29 @@ form.login {
 .navbar-nav .nav-link {
   display: inline-block!important;
 }
+
+
+/* 13. Basic Styling with CSS */
+    
+    /* Style the lines by removing the fill and applying a stroke */
+    .line {
+      fill: none;
+      stroke:red;
+      stroke-width: 3;
+  }
+    
+  .overlay {
+    fill: none;
+    pointer-events: all;
+  }
+  
+  /* Style the dots by assigning a fill and stroke */
+  .dot {
+      fill: red;
+      stroke: #fff;
+  }
+    
+  .focus circle {
+    fill: none;
+    stroke: steelblue;
+  }
