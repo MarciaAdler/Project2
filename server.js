@@ -3,6 +3,13 @@ require("dotenv").config();
 var express = require("express");
 var session = require("express-session");
 var exphbs = require("express-handlebars");
+var scraper = require("./db/coronaVirusData");
+
+// site to scrape
+const caseSite =
+  "https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
+
+scraper();
 
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
