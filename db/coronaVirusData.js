@@ -53,6 +53,11 @@ let scrape = async function(site) {
 };
 
 let scraper = async function(site) {
+  db.Case.destroy({
+    where: {},
+    truncate: true
+  })
+
   var results = await scrape(site);
   console.log(results);
 
