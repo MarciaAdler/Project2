@@ -17,7 +17,7 @@ const caseSite =
 //   }
 // }
 // seedDb();
-scraper();
+// scraper();
 
 // Requiring passport as we've configured it
 var passport = require("./config/passport");
