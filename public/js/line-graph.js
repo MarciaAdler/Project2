@@ -1,9 +1,16 @@
 $(document).ready(() => {
 
+    // console.log("Country Name:" + $('#country-name').text());
 
+    let countryName = $('#country-name').text();
+    let queryUrl = "/api/d3/";
+
+    if (countryName) {
+        queryUrl = "/api/d3/" + countryName;
+    }
     
     $.ajax({
-        url: "/api/d3",
+        url: queryUrl,
         method: "GET"
     }).then(response => {
         console.log("D3: ");
@@ -14,16 +21,18 @@ $(document).ready(() => {
         , height = (window.innerHeight - margin.top - margin.bottom) * 0.7; // Use the window's height
 
         // The number of datapoints
-        var n = 30;
+        var n = response.length;
 
         // 5. X scale will use the index of our data
         var xScale = d3.scaleLinear()
             .domain([0, n-1]) // input
             .range([0, width]); // output
 
+        // console.log("Response:");
+        // console.log(response[response.length - 1].y);
         // 6. Y scale will use the randomly generate number 
         var yScale = d3.scaleLinear()
-            .domain([0, 100000]) // input 
+            .domain([0, response[response.length - 1].y]) // input 
             .range([height, 0]); // output 
 
         // 7. d3's line generator
@@ -84,4 +93,4 @@ $(document).ready(() => {
     })
 
 
-    });
+});
