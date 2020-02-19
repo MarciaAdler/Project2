@@ -12,6 +12,10 @@ form.login {
   width: 100%;
 }
 
+h5{
+  margin-top:10px;
+}
+
 .search-bar {
   background-image: url("../img/search.png");
   background-repeat: no-repeat;
@@ -88,10 +92,7 @@ form.login {
 
   /* twitter styles */
 
-  .twitter-container{
-    /* padding: 5rem;
-    margin: 10rem; */
-  }
+  */
   .twitterUsername{
     padding: 20px;
   }
