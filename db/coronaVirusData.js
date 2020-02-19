@@ -5,7 +5,7 @@ const db = require("../models/");
 
 // site to scrape
 const caseSite =
-  "http://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
+  "https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Confirmed.csv";
 
 // const deathsSite = "https://github.com/CSSEGISandData/COVID-19/blob/master/csse_covid_19_data/csse_covid_19_time_series/time_series_19-covid-Deaths.csv"
 
@@ -83,7 +83,7 @@ let scraper = async function() {
     }
   }
 
-  fs.writeFile("covid_data.json", JSON.stringify(results), function(err) {
+  fs.writeFileSync("covid_data.json", JSON.stringify(results), function(err) {
     if (err) throw err;
     console.log("Saved!");
   });
