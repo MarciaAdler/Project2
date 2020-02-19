@@ -1,3 +1,5 @@
+$(document).ready(() => {
+
 var Twitter = require('twitter');
 
 var client = new Twitter({
@@ -26,4 +28,4 @@ client.get('search/tweets', {q: 'coronavirus cases lang:en'}, function(error, tw
 
   }
 });
-
+});
