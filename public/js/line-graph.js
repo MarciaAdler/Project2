@@ -13,7 +13,7 @@ $(document).ready(() => {
         url: queryUrl,
         method: "GET"
     }).then(response => {
-        console.log("Query Url: " + queryUrl);
+        // console.log("Query Url: " + queryUrl);
         // console.log("D3: ");
         // console.log(response);
         // 2. Use the margin convention practice 
@@ -53,7 +53,7 @@ $(document).ready(() => {
         // });
         // d3.range(n).map(function(d) { return {"y": d3.randomUniform(1000)() } })
 
-        console.log(dataset)
+        // console.log(dataset)
 
         // 1. Add the SVG to the page and employ #2
         var svg = d3.select(".alert-secondary").append("svg")

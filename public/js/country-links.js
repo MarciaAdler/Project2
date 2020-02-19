@@ -1,4 +1,3 @@
-
 $(document).ready(() => {
 
     $.ajax({
@@ -7,7 +6,7 @@ $(document).ready(() => {
     }).then(response => {
         // console.log(response);
         response.forEach(country => {
-            let navLink = $(`<a href="/members/${country}" class="nav-item nav-link px-3" data-country="${country}">${country}</a>`);
+            let navLink = $(`<a href="/members/${country}" class="nav-item nav-link px-3 country-link" data-country="${country}">${country}</a>`);
             $('.navbar-nav').append(navLink);
 
         });

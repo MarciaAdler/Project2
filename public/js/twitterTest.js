@@ -7,7 +7,7 @@ $(document).ready(() => {
     // console.log(response);
     let statuses = response.statuses;
     let fiveTweets = statuses.slice(0,5);
-    console.log(fiveTweets);
+    // console.log(fiveTweets);
     // $('.twitter-feed').append("Hello");
 
     fiveTweets.forEach(tweet => {
