@@ -1,24 +1,24 @@
 <div class="container-fluid">
-            
-            <div class="row">
-                <div class="col-12 col-lg-8">
-                    <div class="line-graph">
-                        <h1><span id="country-name">{{country}}</span>{{#if country}}:{{/if}} COVID-19 over time </h1>
-                        <div class="alert alert-secondary">
+
+    <div class="row">
+        <div class="col-12 col-lg-8">
+            <div class="line-graph">
+                <h1><span id="country-name">{{country}}</span>{{#if country}}:{{/if}} COVID-19 over time </h1>
+                <div class="alert alert-secondary">
 
 
-                            {{!-- {{#each yAxis}}
+                    {{!-- {{#each yAxis}}
                                 # of Cases: {{this.y}} <br/>
                             {{/each}} --}}
 
-                            
 
 
-                        </div>
-                        <div class="text-right">
-                            Data source: John Hopkins University
-                        </div>
-                        {{!-- <div class="graph-filters">
+
+                </div>
+                <div class="text-right">
+                    Data source: Johns Hopkins University
+                </div>
+                {{!-- <div class="graph-filters">
                             <button class="btn btn-primary btn-sm active">
                                 Filter 1 (Past 7 Days?)
                             </button>
@@ -32,17 +32,17 @@
                                 Filter 4 (Past Year?)
                             </button>
                         </div> --}}
-                    </div>
-                    <div class="twitter-container pt-5">
-                            <h1><img src="https://img.icons8.com/color/48/000000/twitter.png"> Tweets</h1>                        
-                            <div class="twitter-feed">
-                          
-                            </div>
-                    </div>
-                </div>
-                <div class="col-12 col-lg-4" class="news-feed-container">
-                    <h1>News Feed</h1>
-                    <div class="news-feed"></div>
+            </div>
+            <div class="twitter-container pt-5">
+                <h1><img src="https://img.icons8.com/color/48/000000/twitter.png"> Tweets</h1>
+                <div class="twitter-feed">
+
                 </div>
             </div>
         </div>
+        <div class="col-12 col-lg-4" class="news-feed-container">
+            <h1>News Feed</h1>
+            <div class="news-feed"></div>
+        </div>
+    </div>
+</div>
