@@ -4,6 +4,7 @@ var express = require("express");
 var session = require("express-session");
 var exphbs = require("express-handlebars");
 var scraper = require("./db/coronaVirusData");
+var compression = require("compression");
 
 // site to scrape
 const caseSite =
@@ -40,6 +41,8 @@ app.use(
 );
 app.use(passport.initialize());
 app.use(passport.session());
+
+app.use(compression());
 
 // Requiring our routes
 require("./routes/html-routes.js")(app);
