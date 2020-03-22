@@ -54,6 +54,7 @@ let scrape = async function(site) {
 };
 
 let scraper = async function() {
+  // uncomment the below code at startup to seed the database
   // await db.Case.destroy({
   //   where: {},
   //   truncate: true
@@ -90,6 +91,7 @@ let scraper = async function() {
   });
 };
 
+// uncomment the below code at startup to seed the database
 // scraper(caseSite);
 
 module.exports = scraper;
